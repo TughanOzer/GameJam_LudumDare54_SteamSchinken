@@ -11,8 +11,6 @@ public class EnemyLineOfSight : MonoBehaviour
     private void Update()
     {        
         Physics.Raycast(transform.position, transform.right, out RaycastHit hitInfo, _distance);
-
-        Debug.Log(hitInfo.collider);
        
         if (hitInfo.collider != null)
         { 
