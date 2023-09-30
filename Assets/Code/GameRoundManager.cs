@@ -13,9 +13,9 @@ public class GameRoundManager : MonoBehaviour
     public TextMeshProUGUI roundUI;
     public TextMeshProUGUI turnTextUI;
     PlayerController playerController;
-    public int round = 0;
-    public bool ongoingRoundPlayer = true;
-    public bool ongoingRoundEnemy = false;
+    public int Round { get; private set; }
+    public bool IsOngoingRoundPlayer { get; private set; } = true;
+    public bool IsOngoingRoundEnemy { get; private set; } = false;
 
     public static event Action OnEnemyTurnStarted;
     public static event Action OnEnemyTurnFinished;
@@ -34,54 +34,54 @@ public class GameRoundManager : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
     }
 
-    private void FixedUpdate() {
-
-        if (ongoingRoundEnemy ) { 
+    private void FixedUpdate() 
+    {
+        if (IsOngoingRoundEnemy ) { 
             turnTextUI.text = "Enemy Turn!"; 
         }
-        else if (ongoingRoundPlayer ) {
+        else if (IsOngoingRoundPlayer ) {
             turnTextUI.text = "Player Turn!"; 
         }
         else {
             turnTextUI.text = "Error!";
         }
-            
-
     }
 
-
-
-
-    public void RoundCounter() {
-            round = round + 1;
-            roundUI.text = "Round: " + round.ToString();
-    }
-
-    public void SetPlayerTurn(bool state) {
-        ongoingRoundEnemy = !state;
-        ongoingRoundPlayer = state;
-    }
-    public void SetEnemyTurn(bool state) {
-        Debug.Log("SetEnemyTurn");
-        Debug.Log(ongoingRoundEnemy);
-        ongoingRoundEnemy = state;
-        ongoingRoundPlayer = !state;
-        Debug.Log(ongoingRoundEnemy);
-    }
-
-    public void FinishEnemyTurn() {
-        SetPlayerTurn(true); //Das ist nur vorübergehend!
-        SetEnemyTurn(false);
+    public void FinishEnemyTurn()
+    {
+        SetPlayerTurn(); //Das ist nur vorübergehend!
         OnEnemyTurnFinished?.Invoke();
         OnPlayerTurnStarted?.Invoke();
     }
 
-    public void FinishPlayerTurn() {
-        RoundCounter();
-        SetEnemyTurn(true);
-        SetPlayerTurn(false);
+    public void FinishPlayerTurn()
+    {
+        NextRound();
+        SetEnemyTurn();
         OnPlayerTurnFinished?.Invoke();
         OnEnemyTurnStarted?.Invoke();
     }
+
+    public void NextRound() 
+    {
+        Round++;
+        roundUI.text = "Round: " + Round.ToString();
+    }
+
+    public void SetPlayerTurn() 
+    {
+        IsOngoingRoundEnemy = false;
+        IsOngoingRoundPlayer = true;
+    }
+
+    public void SetEnemyTurn() 
+    {
+        IsOngoingRoundEnemy = true;
+        IsOngoingRoundPlayer = false;
+    }
+
+
+
+
 
 }

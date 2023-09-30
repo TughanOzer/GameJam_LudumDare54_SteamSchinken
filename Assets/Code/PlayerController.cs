@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (!gameRoundManager.ongoingRoundEnemy && gameRoundManager.ongoingRoundPlayer) {
+        if (!gameRoundManager.IsOngoingRoundEnemy && gameRoundManager.IsOngoingRoundPlayer) {
             transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, moveSpeed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, moveTarget.position) <= .05f) {
