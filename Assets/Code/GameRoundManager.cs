@@ -4,9 +4,11 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameRoundManager : MonoBehaviour
 {
+    public static GameRoundManager Instance { get; private set; }
     public GameObject player;
     public TextMeshProUGUI roundUI;
     public TextMeshProUGUI turnTextUI;
@@ -14,6 +16,19 @@ public class GameRoundManager : MonoBehaviour
     public int round = 0;
     public bool ongoingRoundPlayer = true;
     public bool ongoingRoundEnemy = false;
+
+    public static event Action OnEnemyTurnStarted;
+    public static event Action OnEnemyTurnFinished;
+    public static event Action OnPlayerTurnStarted;
+    public static event Action OnPlayerTurnFinished;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start() {
         playerController = player.GetComponent<PlayerController>();
@@ -57,12 +72,16 @@ public class GameRoundManager : MonoBehaviour
     public void FinishEnemyTurn() {
         SetPlayerTurn(true); //Das ist nur vorübergehend!
         SetEnemyTurn(false);
+        OnEnemyTurnFinished?.Invoke();
+        OnPlayerTurnStarted?.Invoke();
     }
 
     public void FinishPlayerTurn() {
         RoundCounter();
         SetEnemyTurn(true);
         SetPlayerTurn(false);
+        OnPlayerTurnFinished?.Invoke();
+        OnEnemyTurnStarted?.Invoke();
     }
 
 }
