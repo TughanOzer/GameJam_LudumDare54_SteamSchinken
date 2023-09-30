@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyLineOfSight : MonoBehaviour
 {
+    public static event Action OnPlayerSpotted;
     [SerializeField] private float _distance;
 
     private void Update()
@@ -16,7 +18,10 @@ public class EnemyLineOfSight : MonoBehaviour
         { 
             Debug.DrawLine(transform.position, hitInfo.point, Color.red); 
 
-            //Insert Player Logic here
+            var player = hitInfo.collider.GetComponent<Player>();
+
+            if (player != null && !player.IsInvisible)
+                OnPlayerSpotted?.Invoke();
         }
         else
         {
