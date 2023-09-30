@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     public static event Action OnGameReset;
+    public static event Action OnGameWon;
+    public static event Action OnGameLost;
+    public static event Action OnLevelWon;
 
     public int Score { get; private set; } = 0;
 
@@ -47,6 +50,21 @@ public class GameManager : MonoBehaviour
     private void ResetScore()
     { 
         Score = 0; 
+    }
+
+    public void RaiseGameWon()
+    {
+        OnGameWon?.Invoke();
+    }
+
+    public void RaiseGameLost()
+    {
+        OnGameLost?.Invoke();
+    }
+
+    public void RaiseLevelWon()
+    {
+        OnLevelWon?.Invoke();
     }
 
     #endregion
