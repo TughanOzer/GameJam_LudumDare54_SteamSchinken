@@ -90,7 +90,7 @@ public class Leaderboard : MonoBehaviour
                     else
                         currentPlayer += members[i].player.id;
 
-                    _playerScores += members[i].score. + "\n";
+                    _playerScores += members[i].score + "\n";
                     _playerNames += currentPlayer + "\n";
 
                     _playerNamesGUI.text = _playerNames;
