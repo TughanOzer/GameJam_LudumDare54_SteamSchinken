@@ -5544,7 +5544,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 9059594374597877568, guid: e773dda23a209df42b56e5e5fb953b88, type: 3}
   playerSpawnLocation: {fileID: 2018062186}
   enemySpawnLocation: {fileID: 1206225530}
-  whoTurnUI: {fileID: 1310354634}
+  turnUI: {fileID: 1310354634}
   state: 0
   round: 0
   roundUI: {fileID: 665851034}
@@ -5930,9 +5930,6 @@ MonoBehaviour:
   player: {fileID: 0}
   roundUI: {fileID: 665851034}
   turnTextUI: {fileID: 1310354634}
-  round: 0
-  ongoingRoundPlayer: 1
-  ongoingRoundEnemy: 0
 --- !u!4 &1754274164
 Transform:
   m_ObjectHideFlags: 0
