@@ -12,18 +12,22 @@ public class PlayerControllerEndo : MonoBehaviour
     [SerializeField] private float _jumpPower = 1f;
     [SerializeField] private float _jumpTime = 0.2f;
     private bool _isMoving;
+    private Vector3 _startPosition = new();
 
 
 
     private void Start()
     {
-        Move(Vector3.zero);
+        //snaps player to grid
+        Vector3Int cellPosition = _grid.WorldToCell(_startPosition);
+        Vector3 newStartPosition = _grid.GetCellCenterWorld(cellPosition);
+        transform.position = newStartPosition;
+        _startPosition = newStartPosition;
     }
 
     private void Update()
     {
-        if (GameRoundManager.Instance.IsOngoingRoundPlayer)
-            HandleInput();
+        HandleInput();
     }
 
     private void HandleInput()
@@ -60,6 +64,7 @@ public class PlayerControllerEndo : MonoBehaviour
             {
                 Vector3 newWorldPosition = _grid.GetCellCenterWorld(cellPosition);
                 StartCoroutine(TweenMovement(newWorldPosition));
+                GameRoundManager.Instance.RaisePlayerMove();
             }
             else
             {

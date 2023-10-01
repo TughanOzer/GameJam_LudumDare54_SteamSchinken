@@ -18,12 +18,12 @@ public class PlayerVisibilityHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        GameRoundManager.OnPlayerTurnFinished += CheckForAbilityEnd;
+        GameRoundManager.OnPlayerMoved += CheckForAbilityEnd;
     }
 
     private void OnDisable()
     {
-        GameRoundManager.OnPlayerTurnFinished -= CheckForAbilityEnd;
+        GameRoundManager.OnPlayerMoved -= CheckForAbilityEnd;
     }
 
     private void Start()
@@ -31,20 +31,21 @@ public class PlayerVisibilityHandler : MonoBehaviour
         if (Player.Instance != null)
         {
             _player = Player.Instance;
-            _spriteRenderer = _player.GetComponent<SpriteRenderer>();
+            _spriteRenderer = _player.GetComponentInChildren<SpriteRenderer>();
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GameRoundManager.Instance.IsOngoingRoundPlayer)
+        if (Input.GetKeyDown(KeyCode.Space))
             TurnPlayerInvisible();
     }
 
     private void TurnPlayerInvisible()
     {
-        if (!_player.IsInvisible)
+        if (!_player.IsInvisible && _player.LeftOverStealthUses > 0)
         {
+            Debug.Log("Turning Invisible!");
              var turnStealthStart = GameRoundManager.Instance.Round;
             _endStealthRound = turnStealthStart + _stealthTurnDuration;
             _player.SetInvisible();
@@ -57,6 +58,7 @@ public class PlayerVisibilityHandler : MonoBehaviour
     {
         if (_player.IsInvisible && GameRoundManager.Instance.Round >= _endStealthRound)
         {
+            Debug.Log("Turning Visible!");
             _player.SetVisible();
             _spriteRenderer.DOFade(1, 0.2f);
         }

@@ -9,18 +9,11 @@ using System;
 public class GameRoundManager : MonoBehaviour
 {
     public static GameRoundManager Instance { get; private set; }
-    public GameObject player;
-    public TextMeshProUGUI roundUI;
-    public TextMeshProUGUI turnTextUI;
-    PlayerController playerController;
-    public int Round { get; private set; }
-    public bool IsOngoingRoundPlayer { get; private set; } = true;
-    public bool IsOngoingRoundEnemy { get; private set; } = false;
 
-    public static event Action OnEnemyTurnStarted;
-    public static event Action OnEnemyTurnFinished;
-    public static event Action OnPlayerTurnStarted;
-    public static event Action OnPlayerTurnFinished;
+    public int Round { get; private set; } = 0;
+
+    public static event Action OnPlayerMoved;
+
 
     private void Awake()
     {
@@ -30,58 +23,30 @@ public class GameRoundManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Start() {
-        playerController = player.GetComponent<PlayerController>();
-    }
-
-    private void FixedUpdate() 
+    private void OnEnable()
     {
-        if (IsOngoingRoundEnemy ) { 
-            turnTextUI.text = "Enemy Turn!"; 
-        }
-        else if (IsOngoingRoundPlayer ) {
-            turnTextUI.text = "Player Turn!"; 
-        }
-        else {
-            turnTextUI.text = "Error!";
-        }
+        GameManager.OnGameLost += ResetRound;
+        GameRoundManager.OnPlayerMoved += AdvanceRound;
     }
 
-    public void FinishEnemyTurn()
+    private void OnDisable()
     {
-        SetPlayerTurn(); //Das ist nur vorübergehend!
-        OnEnemyTurnFinished?.Invoke();
-        OnPlayerTurnStarted?.Invoke();
+        GameManager.OnGameLost -= ResetRound;
+        GameRoundManager.OnPlayerMoved -= AdvanceRound;
     }
 
-    public void FinishPlayerTurn()
-    {
-        NextRound();
-        SetEnemyTurn();
-        OnPlayerTurnFinished?.Invoke();
-        OnEnemyTurnStarted?.Invoke();
-    }
-
-    public void NextRound() 
+    private void AdvanceRound()
     {
         Round++;
-        roundUI.text = "Round: " + Round.ToString();
     }
 
-    public void SetPlayerTurn() 
+    private void ResetRound()
     {
-        IsOngoingRoundEnemy = false;
-        IsOngoingRoundPlayer = true;
+        Round = 0;
     }
 
-    public void SetEnemyTurn() 
+    public void RaisePlayerMove()
     {
-        IsOngoingRoundEnemy = true;
-        IsOngoingRoundPlayer = false;
+        OnPlayerMoved?.Invoke();
     }
-
-
-
-
-
 }
