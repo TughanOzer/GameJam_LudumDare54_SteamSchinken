@@ -900,7 +900,7 @@ Transform:
   m_GameObject: {fileID: 442480032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.37, y: 3.52, z: 0.24121536}
+  m_LocalPosition: {x: -8.511, y: 3.296, z: 0.24121536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15998,11 +15998,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1183978020}
   - component: {fileID: 1183978019}
-  - component: {fileID: 1183978018}
   - component: {fileID: 1183978017}
   - component: {fileID: 1183978016}
+  - component: {fileID: 1183978021}
   m_Layer: 0
-  m_Name: EnergyPickUp (3)
+  m_Name: ScorePickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16070,25 +16070,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &1183978018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183978015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dec5bb83ebc2fd4a986f0a6d885de66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _energyPickUpSound:
-    Guid:
-      Data1: -778438465
-      Data2: 1164640114
-      Data3: 1324687015
-      Data4: -1341957189
-    Path: event:/Music/Menu Music
 --- !u!212 &1183978019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16156,6 +16137,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183978021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183978015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec694897b0e410449b1fbd0769f2ee74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addedScore: 1000
 --- !u!1 &1250455773
 GameObject:
   m_ObjectHideFlags: 0

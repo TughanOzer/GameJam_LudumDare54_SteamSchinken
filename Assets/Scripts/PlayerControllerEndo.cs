@@ -94,7 +94,6 @@ public class PlayerControllerEndo : MonoBehaviour
         _isMoving = true;
         transform.DOJump(targetPosition, _jumpPower, 1, _jumpTime);
         yield return new WaitForSeconds(_jumpTime);
-        //GameRoundManager.Instance.FinishPlayerTurn();
         _isMoving = false;
     }
 }
