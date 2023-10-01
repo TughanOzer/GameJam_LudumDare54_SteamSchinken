@@ -37,11 +37,11 @@ internal class SettingMenu : MonoBehaviour
         _backButton = GetComponentInChildren<Button>();
 
         _backButton.onClick.AddListener(OpenMainMenu);
-        /*
-        _masterVolume.onValueChanged.AddListener(AudioManager.Instance.SetMasterVolume);
-        _musicVolume.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolume);
-        _sfxVolume.onValueChanged.AddListener(AudioManager.Instance.SetEffectsVolume);
-        */
+        
+        _masterVolume.onValueChanged.AddListener(SetMasterVolume);
+        _musicVolume.onValueChanged.AddListener(SetMusicVolume);
+        _sfxVolume.onValueChanged.AddListener(SetSoundVolume);
+        
     }
 
     private void OnDisable()
@@ -70,6 +70,27 @@ internal class SettingMenu : MonoBehaviour
     private void PlayButtonClick()
     {
         //AudioManager.Instance.PlaySoundEffectOnce(SFX._0001_ButtonClick);
+    }
+
+    private void SetMasterVolume(float value)
+    {
+        AudioManager.Instance.MasterVolume = value;
+    }
+
+    private void SetMusicVolume(float value)
+    {
+        AudioManager.Instance.MusicVolume = value;
+    }
+
+    private void SetSoundVolume(float value)
+    {
+        AudioManager.Instance.SoundVolume = value;
+    }
+
+    public void ResumeGameButton()
+    {
+        PauseControl.Instance.ResumeGame();
+        _settingsCanvas.enabled = false;
     }
 
     #endregion
