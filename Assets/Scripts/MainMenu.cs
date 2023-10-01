@@ -36,6 +36,8 @@ internal class MainMenu : MonoBehaviour
         _startButton.GetComponent<Button>().onClick.AddListener(NewGame);
         _settingsButton.GetComponent<Button>().onClick.AddListener(OpenSettings);
         _creditsButton.GetComponent<Button>().onClick.AddListener(OpenCredits);
+
+        AudioManager.Instance.PlayMenuMusic();
     }
 
     private void OnDisable()
@@ -70,6 +72,8 @@ internal class MainMenu : MonoBehaviour
     public void NewGame()
     {
         PlayButtonClick();
+        AudioManager.Instance.StopMenuMusic();
+        AudioManager.Instance.PlayLevelMusic();
         SceneManager.LoadSceneAsync(1); //1 should be first level; 0 should be main menu
     }
 
