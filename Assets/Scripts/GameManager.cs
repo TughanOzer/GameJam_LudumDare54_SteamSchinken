@@ -1,3 +1,4 @@
+using LootLocker.Requests;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,6 +41,21 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         OnGameReset -= ResetScore;    
+    }
+
+    private void Start()
+    {
+        //Logs in the player with a guest id for the global leaderboard
+        LootLockerSDKManager.StartGuestSession((response) =>
+        {
+            if (!response.success)
+            {
+                Debug.Log("error starting LootLocker session");
+                PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
+                return;
+            }
+            Debug.Log("sucessfully started LootLocker session");
+        });
     }
 
     public void AddScore(int amount)
