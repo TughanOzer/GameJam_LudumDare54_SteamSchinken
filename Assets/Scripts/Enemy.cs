@@ -52,7 +52,11 @@ public class Enemy : MonoBehaviour
     private void Move()
     {
         _enemyLineOfSight.CheckForPlayerInLineOfSight();
-        MoveSteps nextStep = _moveSteps[_currentIndex];
+        MoveSteps nextStep = MoveSteps.None;
+        
+        if (_moveSteps.Count > 0)
+            nextStep = _moveSteps[_currentIndex];
+        
         Vector3 moveDirection = Vector3.zero;
 
         switch (nextStep)
@@ -101,8 +105,11 @@ public class Enemy : MonoBehaviour
             _currentIndex = 0;
 
         //Turns the sprite in the direction of the next step
-        Turn(_moveSteps[_currentIndex]);
-        _enemyLineOfSight.Turn(_moveSteps[_currentIndex]);
+        if (_moveSteps.Count > 0)
+        {
+            Turn(_moveSteps[_currentIndex]);
+            _enemyLineOfSight.Turn(_moveSteps[_currentIndex]);
+        }
         _enemyLineOfSight.CheckForPlayerInLineOfSight();
     }
 
@@ -157,4 +164,5 @@ public enum MoveSteps
     Down,
     Left,
     Right,
+    None,
 }
