@@ -1,4 +1,5 @@
 using DG.Tweening;
+using FMODUnity;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,7 +11,9 @@ public class PlayerVisibilityHandler : MonoBehaviour
     private Player _player;
     private SpriteRenderer _spriteRenderer;
     private int _endStealthRound;
-    [SerializeField] private int _stealthTurnDuration = 3;
+    [SerializeField] private int _stealthTurnDuration = 4;
+    [SerializeField] private EventReference _turnVisibleSound;
+    [SerializeField] private EventReference _turnInvisibleSound;
 
     #endregion
 
@@ -45,8 +48,8 @@ public class PlayerVisibilityHandler : MonoBehaviour
     {
         if (!_player.IsInvisible && _player.LeftOverStealthUses > 0)
         {
-            Debug.Log("Turning Invisible!");
-             var turnStealthStart = GameRoundManager.Instance.Round;
+            AudioManager.Instance.PlayOneShot(_turnInvisibleSound, transform.position);
+            var turnStealthStart = GameRoundManager.Instance.Round;
             _endStealthRound = turnStealthStart + _stealthTurnDuration;
             _player.SetInvisible();
             _player.ReduceStealthUses();
@@ -58,7 +61,7 @@ public class PlayerVisibilityHandler : MonoBehaviour
     {
         if (_player.IsInvisible && GameRoundManager.Instance.Round >= _endStealthRound)
         {
-            Debug.Log("Turning Visible!");
+            AudioManager.Instance.PlayOneShot(_turnVisibleSound, transform.position);
             _player.SetVisible();
             _spriteRenderer.DOFade(1, 0.2f);
         }

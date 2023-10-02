@@ -101,6 +101,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _addedScore: 1337
+  _pickUpSound:
+    Guid:
+      Data1: -1273052294
+      Data2: 1337488286
+      Data3: -1637084790
+      Data4: -193905849
+    Path: event:/SFX/Misc/Coin_COLLECT
 --- !u!50 &-920573103556231847
 Rigidbody2D:
   serializedVersion: 4

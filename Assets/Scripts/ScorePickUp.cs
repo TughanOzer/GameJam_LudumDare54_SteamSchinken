@@ -1,4 +1,5 @@
 using Characters.UI;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class ScorePickUp : MonoBehaviour
 {
     [SerializeField] private int _addedScore = 1000;
+    [SerializeField] private EventReference _pickUpSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +16,7 @@ public class ScorePickUp : MonoBehaviour
         {
             GameManager.Instance.AddScore(_addedScore);
             GetComponent<PopUpSpawner>().SpawnPopUp(_addedScore);
-            //todo: play pickup sound
+            AudioManager.Instance.PlayOneShot(_pickUpSound, transform.position);
             Destroy(gameObject);
         }
     }

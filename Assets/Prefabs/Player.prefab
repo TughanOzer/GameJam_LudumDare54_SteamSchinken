@@ -267,6 +267,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stealthTurnDuration: 4
+  _turnVisibleSound:
+    Guid:
+      Data1: 40740391
+      Data2: 1274788558
+      Data3: -967802467
+      Data4: 75607195
+    Path: event:/SFX/Plyr/Plyr_VISIBLE
+  _turnInvisibleSound:
+    Guid:
+      Data1: 40740391
+      Data2: 1274788558
+      Data3: -967802467
+      Data4: 75607195
+    Path: event:/SFX/Plyr/Plyr_VISIBLE
 --- !u!114 &3633399614149131094
 MonoBehaviour:
   m_ObjectHideFlags: 0
