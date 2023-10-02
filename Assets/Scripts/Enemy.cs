@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<MoveSteps> _moveSteps;
     [SerializeField] private Grid _grid;
     [SerializeField] private Tilemap _obstacles;
+    [SerializeField] private GameObject _caught;
     private Vector3 _startPosition = new();
     private int _currentIndex = 0;
     private float _jumpPower = 1f;
@@ -28,12 +29,14 @@ public class Enemy : MonoBehaviour
     {
         GameRoundManager.OnPlayerMoved += Move;
         GameManager.OnGameLost += ResetPositionAndIndex;
+        EnemyLineOfSight.OnPlayerSpotted += OnPlayerSpotted;
     }
 
     private void OnDisable()
     {
         GameRoundManager.OnPlayerMoved -= Move;
         GameManager.OnGameLost -= ResetPositionAndIndex;
+        EnemyLineOfSight.OnPlayerSpotted += OnPlayerSpotted;
     }
 
     private void Start()
@@ -153,6 +156,12 @@ public class Enemy : MonoBehaviour
                 _visualsRenderer.flipX = true;
                 break;
         }
+    }
+
+    private void OnPlayerSpotted()
+    {
+        var renderer = _caught.GetComponent<SpriteRenderer>();
+        renderer.enabled = true;
     }
 
     #endregion
