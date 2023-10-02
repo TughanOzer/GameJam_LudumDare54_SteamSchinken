@@ -8,6 +8,11 @@ public class EnemyLineOfSight : MonoBehaviour
     public static event Action OnPlayerSpotted;
     [SerializeField] private float _distance;
 
+    private void Update()
+    {
+        CheckForPlayerInLineOfSight();
+    }
+
     public void CheckForPlayerInLineOfSight()
     {
         CheckRay(transform.right);
@@ -27,13 +32,14 @@ public class EnemyLineOfSight : MonoBehaviour
 
     private void CheckRay(Vector3 direction)
     {
-        Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, _distance);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, _distance);
 
         if (hitInfo.collider != null)
         {
             Debug.DrawLine(transform.position, hitInfo.point, Color.red);
 
             var player = hitInfo.collider.GetComponent<Player>();
+            Debug.Log(player);
 
             if (player != null && !player.IsInvisible)
                 OnPlayerSpotted?.Invoke();

@@ -12,9 +12,19 @@ public class PlayerControllerEndo : MonoBehaviour
     [SerializeField] private float _jumpPower = 1f;
     [SerializeField] private float _jumpTime = 0.2f;
     private bool _isMoving;
+    private bool _isSpotted;
     private Vector3 _startPosition = new();
 
 
+    private void OnEnable()
+    {
+        EnemyLineOfSight.OnPlayerSpotted += OnPlayerSpotted;
+    }
+
+    private void OnDisable()
+    {
+        EnemyLineOfSight.OnPlayerSpotted -= OnPlayerSpotted;
+    }
 
     private void Start()
     {
@@ -33,7 +43,7 @@ public class PlayerControllerEndo : MonoBehaviour
 
     private void HandleInput()
     {
-        if (!_isMoving)
+        if (!_isMoving && !_isSpotted)
         {
             Vector3 moveDirection = Vector3.zero;
 
@@ -96,5 +106,10 @@ public class PlayerControllerEndo : MonoBehaviour
         transform.DOJump(targetPosition, _jumpPower, 1, _jumpTime);
         yield return new WaitForSeconds(_jumpTime);
         _isMoving = false;
+    }
+
+    private void OnPlayerSpotted()
+    {
+        _isSpotted = true;
     }
 }

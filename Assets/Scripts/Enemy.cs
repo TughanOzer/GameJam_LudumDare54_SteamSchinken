@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
-        _enemyLineOfSight.CheckForPlayerInLineOfSight();
         MoveSteps nextStep = MoveSteps.None;
         
         if (_moveSteps.Count > 0)
@@ -113,7 +112,6 @@ public class Enemy : MonoBehaviour
             Turn(_moveSteps[_currentIndex]);
             _enemyLineOfSight.Turn(_moveSteps[_currentIndex]);
         }
-        _enemyLineOfSight.CheckForPlayerInLineOfSight();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
