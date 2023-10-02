@@ -9,12 +9,29 @@ public class EnemyLineOfSight : MonoBehaviour
     [SerializeField] private float _distance;
 
     public void CheckForPlayerInLineOfSight()
-    {        
-        Physics.Raycast(transform.position, transform.right, out RaycastHit hitInfo, _distance);
-       
+    {
+        CheckRay(transform.right);
+
+        // Angle above
+        float angleAbove = 20f; // You can adjust this angle
+        Quaternion rotationAbove = Quaternion.Euler(0, 0, angleAbove);
+        Vector3 directionAbove = rotationAbove * transform.right;
+        CheckRay(directionAbove);
+
+        // Angle below
+        float angleBelow = -20f; // You can adjust this angle
+        Quaternion rotationBelow = Quaternion.Euler(0, 0, angleBelow);
+        Vector3 directionBelow = rotationBelow * transform.right;
+        CheckRay(directionBelow);
+    }
+
+    private void CheckRay(Vector3 direction)
+    {
+        Physics.Raycast(transform.position, direction, out RaycastHit hitInfo, _distance);
+
         if (hitInfo.collider != null)
-        { 
-            Debug.DrawLine(transform.position, hitInfo.point, Color.red); 
+        {
+            Debug.DrawLine(transform.position, hitInfo.point, Color.red);
 
             var player = hitInfo.collider.GetComponent<Player>();
 
@@ -23,7 +40,7 @@ public class EnemyLineOfSight : MonoBehaviour
         }
         else
         {
-            Debug.DrawLine(transform.position, transform.position + transform.right, Color.green);
+            Debug.DrawLine(transform.position, transform.position + direction * _distance, Color.green);
         }
     }
 
