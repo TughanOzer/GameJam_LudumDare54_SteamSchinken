@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ffd7d1084c481d54f8655c70cc4b0329
+guid: a9ded0571fd454c44bb81645d1451e7e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oben_0
+      name: Full_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bf91a95d215b3b429da12f684e0c235
-      internalID: -470908173
+      spriteID: 92746b78ad9f5be439ec9a20873d84fd
+      internalID: 629409960
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3e2c82ef010d268429b57ce6669cec13
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Oben_0: -470908173
+      Full_0: 629409960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

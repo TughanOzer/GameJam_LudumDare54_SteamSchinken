@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ffd7d1084c481d54f8655c70cc4b0329
+guid: 1486a7d31b171da43a7e0830ed46531d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oben_0
+      name: Corner_BottomL_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bf91a95d215b3b429da12f684e0c235
-      internalID: -470908173
+      spriteID: 10a9692228decc149a60d3eca2e698e9
+      internalID: -195262520
       vertices: []
       indices: 
       edges: []
@@ -133,7 +133,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ea087608885010644b630af27dd7725d
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Oben_0: -470908173
+      Corner_BottomL_0: -195262520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
