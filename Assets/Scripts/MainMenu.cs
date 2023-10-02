@@ -74,7 +74,11 @@ internal class MainMenu : MonoBehaviour
         PlayButtonClick();
         AudioManager.Instance.StopMenuMusic();
         AudioManager.Instance.PlayLevelMusic();
-        SceneManager.LoadSceneAsync(1); //1 should be first level; 0 should be main menu
+
+        if (!GameManager.Instance.StoryIsTold)
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.StoryScene);
+        else
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.AAA_Finished);
     }
 
     public void QuitGame()

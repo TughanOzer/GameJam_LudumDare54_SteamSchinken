@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static event Action OnLevelWon;
 
     public int Score { get; private set; } = 0;
+    public bool StoryIsTold { get; private set; } = false;
 
     #endregion
 
@@ -81,6 +82,11 @@ public class GameManager : MonoBehaviour
     public void RaiseLevelWon()
     {
         OnLevelWon?.Invoke();
+    }
+
+    public void SetStoryTold()
+    {
+        StoryIsTold = true;
     }
 
     #endregion
