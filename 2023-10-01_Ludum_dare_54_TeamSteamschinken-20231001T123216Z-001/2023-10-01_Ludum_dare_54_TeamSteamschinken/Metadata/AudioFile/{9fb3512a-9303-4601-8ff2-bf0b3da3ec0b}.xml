@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9fb3512a-9303-4601-8ff2-bf0b3da3ec0b}">
+		<property name="assetPath">
+			<value>SFX/Misc/Coin_COLLECT.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.33925</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{48f88e92-0dbd-4eae-9bef-3fe94893f18d}</destination>
+		</relationship>
+	</object>
+</objects>

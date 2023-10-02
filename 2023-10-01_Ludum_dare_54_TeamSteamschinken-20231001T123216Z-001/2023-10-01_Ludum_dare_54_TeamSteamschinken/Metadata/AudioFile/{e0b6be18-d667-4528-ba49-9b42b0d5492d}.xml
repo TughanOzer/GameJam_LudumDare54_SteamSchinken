@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e0b6be18-d667-4528-ba49-9b42b0d5492d}">
+		<property name="assetPath">
+			<value>SFX/Plyr/Plyr_INVIS.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.29018749999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{48f88e92-0dbd-4eae-9bef-3fe94893f18d}</destination>
+		</relationship>
+	</object>
+</objects>

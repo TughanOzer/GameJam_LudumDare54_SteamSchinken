@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{39d20293-ffdd-4160-9e99-62d971dba65a}">
+		<property name="assetPath">
+			<value>SFX/Plyr/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{48f88e92-0dbd-4eae-9bef-3fe94893f18d}</destination>
+		</relationship>
+	</object>
+</objects>
