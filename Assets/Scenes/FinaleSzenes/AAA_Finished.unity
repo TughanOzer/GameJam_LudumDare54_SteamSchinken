@@ -1075,7 +1075,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1174,16 +1174,16 @@ Tilemap:
     m_Data: {fileID: -831817447, guid: 30a22338282f85042ac525570c5e6420, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1241008210, guid: 2ee332a20f1237a4c8e76a80b03a4cbf, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1480715118, guid: 2ee332a20f1237a4c8e76a80b03a4cbf, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -661524132, guid: 2ee332a20f1237a4c8e76a80b03a4cbf, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -2117461275, guid: bc12baa3f8c8ddb4dab46f80526dedc2, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 168977073, guid: 2ee332a20f1237a4c8e76a80b03a4cbf, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1480715118, guid: 2ee332a20f1237a4c8e76a80b03a4cbf, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 35
     m_Data:
@@ -1675,7 +1675,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1981230809}
 --- !u!114 &563168455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 478702688}
   m_Follow: {fileID: 478702688}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 40
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -14045,6 +14045,11 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1981230809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8271161244934069947, guid: ec90ecefdd2261246ab9f99b8945c135, type: 3}
+  m_PrefabInstance: {fileID: 1262413133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2114383769
 GameObject:
   m_ObjectHideFlags: 0
