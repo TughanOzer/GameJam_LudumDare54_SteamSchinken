@@ -51,6 +51,13 @@ MonoBehaviour:
   _grid: {fileID: 0}
   _obstacles: {fileID: 0}
   _caught: {fileID: 5937140253922513280}
+  _idleVoiceLines:
+    Guid:
+      Data1: -388661307
+      Data2: 1140110806
+      Data3: -654185325
+      Data4: -364958602
+    Path: event:/SFX/Enemies/En_VL_Idle
 --- !u!1 &8613006274834445883
 GameObject:
   m_ObjectHideFlags: 0
