@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,8 +13,12 @@ public class Player : MonoBehaviour
     public static event Action OnStealthEnergyLost;
     public static event Action<int> OnStealthEnergyGained;
 
+    [SerializeField] private EventReference _playerVoiceLines;
+
     public bool IsInvisible { get; private set; }
     public int LeftOverStealthUses { get; private set; } = 3;
+
+    private float _voiceLineTime = 30;
 
     #endregion
 
@@ -47,6 +52,22 @@ public class Player : MonoBehaviour
     public void SetVisible()
     {
         IsInvisible = false;
+    }
+
+    private void Update()
+    {
+        if (_voiceLineTime > 0)
+            _voiceLineTime -= Time.deltaTime;
+        else
+            _voiceLineTime = GenerateRandomTime();
+
+        if (_voiceLineTime <= 0)
+            AudioManager.Instance.PlayOneShot(_playerVoiceLines, transform.position);
+    }
+
+    private float GenerateRandomTime()
+    {
+        return UnityEngine.Random.Range(20, 40);
     }
 
     #endregion

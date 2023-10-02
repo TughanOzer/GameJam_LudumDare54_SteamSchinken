@@ -103,11 +103,11 @@ MonoBehaviour:
   _addedScore: 119
   _pickUpSound:
     Guid:
-      Data1: -1273052294
-      Data2: 1337488286
-      Data3: -1637084790
-      Data4: -193905849
-    Path: event:/SFX/Misc/Coin_COLLECT
+      Data1: 315530689
+      Data2: 1295645210
+      Data3: -1218066030
+      Data4: -1763270607
+    Path: event:/SFX/Plyr/Plyr_VL_Pickup_Pillen
 --- !u!50 &3094986709209420524
 Rigidbody2D:
   serializedVersion: 4

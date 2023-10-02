@@ -254,6 +254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aa18788596e5f41a889b893dc40b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerVoiceLines:
+    Guid:
+      Data1: -1285754713
+      Data2: 1131881728
+      Data3: -296033115
+      Data4: -520615298
+    Path: event:/SFX/Plyr/Plry_VL_Random
 --- !u!114 &9025656728602962237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,11 +283,11 @@ MonoBehaviour:
     Path: event:/SFX/Plyr/Plyr_VISIBLE
   _turnInvisibleSound:
     Guid:
-      Data1: 40740391
-      Data2: 1274788558
-      Data3: -967802467
-      Data4: 75607195
-    Path: event:/SFX/Plyr/Plyr_VISIBLE
+      Data1: -1272919640
+      Data2: 1165512593
+      Data3: 1036913800
+      Data4: 1507663140
+    Path: event:/SFX/Plyr/Plyr_INVIS
 --- !u!114 &3633399614149131094
 MonoBehaviour:
   m_ObjectHideFlags: 0

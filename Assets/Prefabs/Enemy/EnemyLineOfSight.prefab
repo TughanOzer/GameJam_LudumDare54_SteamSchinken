@@ -46,6 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 4.8
+  _caughtVoiceLines:
+    Guid:
+      Data1: -1449568548
+      Data2: 1146678214
+      Data3: 981203389
+      Data4: -1808634550
+    Path: event:/SFX/Enemies/En_VL_Cought
 --- !u!1 &7560889211213312518
 GameObject:
   m_ObjectHideFlags: 0
