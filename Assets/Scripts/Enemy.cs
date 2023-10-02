@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     private float _jumpTime = 0.2f;
     private EnemyLineOfSight _enemyLineOfSight;
     private SpriteRenderer _visualsRenderer;
+    private SpriteRenderer _caughtRenderer;
 
     #endregion
 
@@ -36,11 +37,12 @@ public class Enemy : MonoBehaviour
     {
         GameRoundManager.OnPlayerMoved -= Move;
         GameManager.OnGameLost -= ResetPositionAndIndex;
-        EnemyLineOfSight.OnPlayerSpotted += OnPlayerSpotted;
+        EnemyLineOfSight.OnPlayerSpotted -= OnPlayerSpotted;
     }
 
     private void Start()
     {
+        _caughtRenderer = _caught.GetComponent<SpriteRenderer>();
         _visualsRenderer = GetComponentInChildren<SpriteRenderer>();
         _enemyLineOfSight = GetComponentInChildren<EnemyLineOfSight>();
         _startPosition = transform.position;
@@ -158,8 +160,7 @@ public class Enemy : MonoBehaviour
 
     private void OnPlayerSpotted()
     {
-        var renderer = _caught.GetComponent<SpriteRenderer>();
-        renderer.enabled = true;
+        _caughtRenderer.enabled = true;
     }
 
     #endregion

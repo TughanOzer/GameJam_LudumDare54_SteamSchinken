@@ -38,11 +38,9 @@ public class EnemyLineOfSight : MonoBehaviour
         {
             Debug.DrawLine(transform.position, hitInfo.point, Color.red);
 
-            var player = hitInfo.collider.GetComponent<Player>();
-            Debug.Log(player);
-
-            if (player != null && !player.IsInvisible)
-                OnPlayerSpotted?.Invoke();
+            if (hitInfo.collider.gameObject.TryGetComponent<Player>(out Player player))
+                if (!player.IsInvisible)
+                    OnPlayerSpotted?.Invoke();
         }
         else
         {

@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cd9da7990e30a48a3c5654264ac87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stealthTurnDuration: 3
+  _stealthTurnDuration: 4
 --- !u!114 &3633399614149131094
 MonoBehaviour:
   m_ObjectHideFlags: 0
