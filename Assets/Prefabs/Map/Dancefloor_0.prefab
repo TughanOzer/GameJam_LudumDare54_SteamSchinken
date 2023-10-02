@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4687927440075427762}
   - component: {fileID: 258090282498584674}
   - component: {fileID: 1872704358038702016}
+  - component: {fileID: 8333369133702210742}
   m_Layer: 0
   m_Name: Dancefloor_0
   m_TagString: Untagged
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 6}
   m_EdgeRadius: 0
+--- !u!114 &8333369133702210742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282936807309472819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f51d38a3aee0c41a146f92767dbd2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 258090282498584674}
+  interval: 1
