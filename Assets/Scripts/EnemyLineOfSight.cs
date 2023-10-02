@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ public class EnemyLineOfSight : MonoBehaviour
 {
     public static event Action OnPlayerSpotted;
     [SerializeField] private float _distance;
+    [SerializeField] private EventReference _caughtVoiceLines;
 
     private void Update()
     {
@@ -39,8 +41,13 @@ public class EnemyLineOfSight : MonoBehaviour
             Debug.DrawLine(transform.position, hitInfo.point, Color.red);
 
             if (hitInfo.collider.gameObject.TryGetComponent<Player>(out Player player))
+            {
                 if (!player.IsInvisible)
+                {
+                    AudioManager.Instance.PlayOneShot(_caughtVoiceLines, transform.position);
                     OnPlayerSpotted?.Invoke();
+                }
+            }
         }
         else
         {
