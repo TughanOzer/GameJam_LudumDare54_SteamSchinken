@@ -8,8 +8,10 @@ public class StealthEnergyVisualizer : MonoBehaviour
 {
     #region Fields and Properties
 
-    [SerializeField] private List<GameObject> _energyMarkers = new();
-    [SerializeField] private GameObject _energyMarkerPrefab;
+    [SerializeField] private List<GameObject> _fullEnergyMarkers = new();
+    [SerializeField] private List<GameObject> _emptyEnergyMarkers = new();
+    [SerializeField] private GameObject _fullMarkerPrefab;
+    [SerializeField] private GameObject _emptyMarkerPrefab;
     [SerializeField] private HorizontalLayoutGroup _layoutGroup;
 
     #endregion
@@ -38,27 +40,33 @@ public class StealthEnergyVisualizer : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
             InstantiateEnergyMarker();
-
     }
 
     private void StealthEnergyLost()
     {
-        if (_energyMarkers.Count > Player.Instance.LeftOverStealthUses)
+        if (_fullEnergyMarkers.Count > Player.Instance.LeftOverStealthUses)
         {
-            var energyMarker = _energyMarkers[0];
-            _energyMarkers.RemoveAt(0);
+            var energyMarker = _fullEnergyMarkers[0];
+            _fullEnergyMarkers.RemoveAt(0);
             StartCoroutine(DestroyMarker(energyMarker));
         }
     }
 
     private void InstantiateEnergyMarker()
     {
-        if (_energyMarkers.Count < Player.Instance.LeftOverStealthUses)
+        if (_fullEnergyMarkers.Count < Player.Instance.LeftOverStealthUses)
         {
-            var energyMarker = Instantiate(_energyMarkerPrefab, _layoutGroup.transform).GetComponent<Image>();
+            if (_emptyEnergyMarkers.Count > 0)
+            {
+                var emptyMarker = _emptyEnergyMarkers[0];
+                _emptyEnergyMarkers.RemoveAt(0);
+                Destroy(emptyMarker);
+            }
+
+            var energyMarker = Instantiate(_fullMarkerPrefab, _layoutGroup.transform).GetComponent<Image>();
             energyMarker.DOFade(0, 0.0001f);
             energyMarker.DOFade(1, 1f).SetEase(Ease.OutBounce);
-            _energyMarkers.Add(energyMarker.gameObject);
+            _fullEnergyMarkers.Add(energyMarker.gameObject);
         }
     }
 
@@ -68,6 +76,8 @@ public class StealthEnergyVisualizer : MonoBehaviour
         markerImage.DOFade(0, 1).SetEase(Ease.InBounce);
         yield return new WaitForSeconds(1.1f);
         Destroy(energyMarker);
+        var emptyMarker = Instantiate(_emptyMarkerPrefab, _layoutGroup.transform);
+        _emptyEnergyMarkers.Add(emptyMarker);
     }
 
     #endregion

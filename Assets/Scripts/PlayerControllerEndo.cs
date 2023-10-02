@@ -14,6 +14,7 @@ public class PlayerControllerEndo : MonoBehaviour
     private bool _isMoving;
     private bool _isSpotted;
     private Vector3 _startPosition = new();
+    private SpriteRenderer _spriteRenderer;
 
 
     private void OnEnable()
@@ -34,6 +35,7 @@ public class PlayerControllerEndo : MonoBehaviour
         Vector3 newStartPosition = _grid.GetCellCenterWorld(cellPosition);
         transform.position = newStartPosition;
         _startPosition = newStartPosition;
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -86,7 +88,8 @@ public class PlayerControllerEndo : MonoBehaviour
         else
         {
             Debug.Log("Cell not in bounds!");
-        }       
+        }
+        Turn(moveDirection);
     }
 
     private bool CheckIfCellInBounds(Vector3Int cellPosition)
@@ -106,6 +109,14 @@ public class PlayerControllerEndo : MonoBehaviour
         transform.DOJump(targetPosition, _jumpPower, 1, _jumpTime);
         yield return new WaitForSeconds(_jumpTime);
         _isMoving = false;
+    }
+
+    private void Turn(Vector3 moveSteps)
+    {
+        if (moveSteps == Vector3.left)
+            _spriteRenderer.flipX = true;
+        else if (moveSteps == Vector3.right)
+            _spriteRenderer.flipX = false;          
     }
 
     private void OnPlayerSpotted()
