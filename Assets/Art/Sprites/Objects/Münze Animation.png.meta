@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 775b71ae516321f4b8298eb877ecb49b
+guid: 1ab06049d71e98e43b947473b4098cdc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sitzgruppe 1_0
+      name: "M\xFCnze Animation_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 72
-        height: 72
+        y: 48
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0521329388ea1e346b594c09e5c243a7
-      internalID: 827641832
+      spriteID: cb7484b71626d844d8bf49bc08984f2b
+      internalID: -1121062988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xFCnze Animation_1"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d896b1a8ba21f34eb079b11e7d6625c
+      internalID: 1451952907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xFCnze Animation_2"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aeac203c8a7898498c4935be9cab4ab
+      internalID: -1454429305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xFCnze Animation_3"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e8efed69209784585daa5e07d7897d
+      internalID: 1030887501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xFCnze Animation_4"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9193512f6e58c41499f98051952e785e
+      internalID: 1813925151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "M\xFCnze Animation_5"
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728f28399e112d04b85c85cf60164184
+      internalID: -2063029269
       vertices: []
       indices: 
       edges: []
@@ -133,7 +238,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a60207ed4e48d174aafbc79625b9277a
+    spriteID: 18cf6deebb3e0d94d95796c656ea4a57
     internalID: 0
     vertices: []
     indices: 
@@ -141,7 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sitzgruppe 1_0: 827641832
+      "M\xFCnze Animation_0": -1121062988
+      "M\xFCnze Animation_1": 1451952907
+      "M\xFCnze Animation_2": -1454429305
+      "M\xFCnze Animation_3": 1030887501
+      "M\xFCnze Animation_4": 1813925151
+      "M\xFCnze Animation_5": -2063029269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
