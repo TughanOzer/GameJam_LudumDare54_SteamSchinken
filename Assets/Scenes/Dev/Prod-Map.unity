@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1098626500170483105, guid: 5f8ccec5d0b53354a971582a8ff6fdd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.16
+      value: 4.21
       objectReference: {fileID: 0}
     - target: {fileID: 1098626500170483105, guid: 5f8ccec5d0b53354a971582a8ff6fdd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.48
       objectReference: {fileID: 0}
     - target: {fileID: 1098626500170483105, guid: 5f8ccec5d0b53354a971582a8ff6fdd4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -219,6 +219,7 @@ Transform:
   - {fileID: 1250998556}
   - {fileID: 1698236918}
   - {fileID: 1001740117}
+  - {fileID: 268660908}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &117959713
@@ -802,14 +803,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268660906}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 772914758}
   - {fileID: 636755094}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 68916193}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &268660909
 MonoBehaviour:
@@ -9591,7 +9592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1183978016
 Rigidbody2D:
   serializedVersion: 4
@@ -13880,7 +13881,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dancefloor_0
       objectReference: {fileID: 0}
-    - target: {fileID: 1872704358038702016, guid: 8b61fd2894ce0354091d151db7c96ed3, type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -14013,5 +14014,4 @@ SceneRoots:
   - {fileID: 6767340454896367013}
   - {fileID: 6714711890684041617}
   - {fileID: 838428092}
-  - {fileID: 268660908}
   - {fileID: 68916193}
