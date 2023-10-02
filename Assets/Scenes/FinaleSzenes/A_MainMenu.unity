@@ -1822,7 +1822,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 445}
-  m_SizeDelta: {x: 1053.4514, y: 142.92}
+  m_SizeDelta: {x: 1147.3408, y: 142.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727555954
 MonoBehaviour:
@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shadow Fun
+  m_text: Blade Stalker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8727816de83841e4cb5abe8768f39487, type: 2}
   m_sharedMaterial: {fileID: 5003160190465155694, guid: 8727816de83841e4cb5abe8768f39487, type: 2}
@@ -1978,7 +1978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yuughurt
+  m_text: Julia Babadshanow
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8727816de83841e4cb5abe8768f39487, type: 2}
   m_sharedMaterial: {fileID: 5003160190465155694, guid: 8727816de83841e4cb5abe8768f39487, type: 2}

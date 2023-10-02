@@ -37,7 +37,6 @@ public class WinScreen : MonoBehaviour
         if (Input.anyKeyDown && _winCanvas.enabled)
         {
             AudioManager.Instance.StopLevelMusic();
-            AudioManager.Instance.PlayMenuMusic();
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.A_MainMenu);
         }
     }
