@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
-[RequireComponent(typeof(EnemyLineOfSight))]
+
 public class Enemy : MonoBehaviour
 {
     #region Fields and Properties
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     private float _jumpPower = 1f;
     private float _jumpTime = 0.2f;
     private EnemyLineOfSight _enemyLineOfSight;
+    private SpriteRenderer _visualsRenderer;
 
     #endregion
 
@@ -37,7 +38,8 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        _enemyLineOfSight = GetComponent<EnemyLineOfSight>();
+        _visualsRenderer = GetComponentInChildren<SpriteRenderer>();
+        _enemyLineOfSight = GetComponentInChildren<EnemyLineOfSight>();
         _startPosition = transform.position;
 
         //snaps enemy to grid
@@ -100,6 +102,7 @@ public class Enemy : MonoBehaviour
 
         //Turns the sprite in the direction of the next step
         Turn(_moveSteps[_currentIndex]);
+        _enemyLineOfSight.Turn(_moveSteps[_currentIndex]);
         _enemyLineOfSight.CheckForPlayerInLineOfSight();
     }
 
@@ -134,29 +137,15 @@ public class Enemy : MonoBehaviour
 
     private void Turn(MoveSteps directionOrder)
     {
-        Vector3 direction;
-
         switch (directionOrder)
         {
-            case MoveSteps.Up:
-                direction = Vector3.up;
-                break;
-            case MoveSteps.Down:
-                direction = Vector3.down;
-                break;
             case MoveSteps.Left:
-                direction = Vector3.left;
+                _visualsRenderer.flipX = false;
                 break;
             case MoveSteps.Right:
-                direction = Vector3.right;
-                break;
-            default:
-                direction = Vector3.right;
+                _visualsRenderer.flipX = true;
                 break;
         }
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     #endregion

@@ -19,6 +19,7 @@ public class PlayerControllerEndo : MonoBehaviour
     private void Start()
     {
         //snaps player to grid
+        _startPosition = transform.position;
         Vector3Int cellPosition = _grid.WorldToCell(_startPosition);
         Vector3 newStartPosition = _grid.GetCellCenterWorld(cellPosition);
         transform.position = newStartPosition;
