@@ -47,12 +47,6 @@ public class AudioManager : MonoBehaviour
         _soundBus.setVolume(SoundVolume);
     }
 
-    private void Start()
-    {
-        _menuMusicEventInstance = CreateEventInstance(_menuMusic);
-        _levelMusicEventInstance = CreateEventInstance(_levelMusic);
-    }
-
     public void PlayOneShot(EventReference sound, Vector3 worldPosition)
     {
         RuntimeManager.PlayOneShot(sound, worldPosition);
@@ -67,6 +61,8 @@ public class AudioManager : MonoBehaviour
     public void PlayMenuMusic()
     {
         PLAYBACK_STATE playbackState;
+
+        _menuMusicEventInstance = CreateEventInstance(_menuMusic);
         _menuMusicEventInstance.getPlaybackState(out playbackState);
         
         if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
@@ -76,6 +72,7 @@ public class AudioManager : MonoBehaviour
     public void PlayLevelMusic()
     {
         PLAYBACK_STATE playbackState;
+        _levelMusicEventInstance = CreateEventInstance(_levelMusic);
         _levelMusicEventInstance.getPlaybackState(out playbackState);
 
         if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
