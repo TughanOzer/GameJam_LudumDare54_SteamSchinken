@@ -62,6 +62,7 @@ public class AudioManager : MonoBehaviour
     {
         PLAYBACK_STATE playbackState;
 
+        _menuMusicEventInstance.release();
         _menuMusicEventInstance = CreateEventInstance(_menuMusic);
         _menuMusicEventInstance.getPlaybackState(out playbackState);
         
@@ -72,6 +73,7 @@ public class AudioManager : MonoBehaviour
     public void PlayLevelMusic()
     {
         PLAYBACK_STATE playbackState;
+        _levelMusicEventInstance.release();
         _levelMusicEventInstance = CreateEventInstance(_levelMusic);
         _levelMusicEventInstance.getPlaybackState(out playbackState);
 
