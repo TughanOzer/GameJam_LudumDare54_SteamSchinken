@@ -292,8 +292,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 2023-10-01_Ludum_dare_54_TeamSteamschinken/2023-10-01_Ludum_dare_54_TeamSteamschinken/2023-10-01_Ludum_dare_54_TeamSteamschinken.fspro
-  sourceBankPath: 2023-10-01_Ludum_dare_54_TeamSteamschinken/2023-10-01_Ludum_dare_54_TeamSteamschinken/Build
+  sourceProjectPath: 2023-10-01_Ludum_dare_54_TeamSteamschinken/2023-10-01_Ludum_dare_54_TeamSteamschinken_004/2023-10-01_Ludum_dare_54_TeamSteamschinken_004.fspro
+  sourceBankPath: 2023-10-01_Ludum_dare_54_TeamSteamschinken/2023-10-01_Ludum_dare_54_TeamSteamschinken_004/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

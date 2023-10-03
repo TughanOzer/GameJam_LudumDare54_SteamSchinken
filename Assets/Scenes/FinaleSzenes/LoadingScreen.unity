@@ -572,6 +572,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65987b96ae9589849a485bf8e99e16c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _voiceLine:
+    Guid:
+      Data1: -1475841661
+      Data2: 1336616212
+      Data3: 1927806651
+      Data4: -1323358225
+    Path: event:/SFX/Misc/Loading_Screen_Title
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

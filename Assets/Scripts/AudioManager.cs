@@ -61,7 +61,6 @@ public class AudioManager : MonoBehaviour
     public void PlayMenuMusic()
     {
         PLAYBACK_STATE playbackState;
-
         _menuMusicEventInstance.release();
         _menuMusicEventInstance = CreateEventInstance(_menuMusic);
         _menuMusicEventInstance.getPlaybackState(out playbackState);

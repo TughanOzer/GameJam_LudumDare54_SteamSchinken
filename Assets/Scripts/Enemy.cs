@@ -23,10 +23,6 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer _visualsRenderer;
     private SpriteRenderer _caughtRenderer;
 
-    [SerializeField] private EventReference _idleVoiceLines;
-
-    private float _timeTillVoiceLine;
-
     #endregion
 
     #region Methods
@@ -47,8 +43,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        _timeTillVoiceLine = UnityEngine.Random.Range(30, 60);
-
         _caughtRenderer = _caught.GetComponent<SpriteRenderer>();
         _visualsRenderer = GetComponentInChildren<SpriteRenderer>();
         _enemyLineOfSight = GetComponentInChildren<EnemyLineOfSight>();
@@ -59,17 +53,6 @@ public class Enemy : MonoBehaviour
         Vector3 newStartPosition = _grid.GetCellCenterWorld(cellPosition);
         transform.position = newStartPosition;
         _startPosition = newStartPosition;
-    }
-
-    private void Update()
-    {
-        if (_timeTillVoiceLine > 0)
-            _timeTillVoiceLine--;
-        else
-            _timeTillVoiceLine = UnityEngine.Random.Range(30, 60);
-
-        if (_timeTillVoiceLine <= 0)
-            AudioManager.Instance.PlayOneShot(_idleVoiceLines, transform.position);
     }
 
     private void Move()

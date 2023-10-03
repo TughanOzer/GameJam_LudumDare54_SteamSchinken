@@ -10,6 +10,8 @@ public class EnemyLineOfSight : MonoBehaviour
     [SerializeField] private float _distance;
     [SerializeField] private EventReference _caughtVoiceLines;
 
+    private bool _caugthVoiceLinePlayed;
+
     private void Update()
     {
         CheckForPlayerInLineOfSight();
@@ -44,8 +46,12 @@ public class EnemyLineOfSight : MonoBehaviour
             {
                 if (!player.IsInvisible)
                 {
-                    AudioManager.Instance.PlayOneShot(_caughtVoiceLines, transform.position);
-                    OnPlayerSpotted?.Invoke();
+                    if (!_caugthVoiceLinePlayed)
+                    {
+                        _caugthVoiceLinePlayed = true;
+                        AudioManager.Instance.PlayOneShot(_caughtVoiceLines, transform.position);
+                        OnPlayerSpotted?.Invoke();
+                    }
                 }
             }
         }

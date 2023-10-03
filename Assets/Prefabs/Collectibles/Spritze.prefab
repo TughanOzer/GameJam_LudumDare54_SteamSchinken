@@ -4932,11 +4932,11 @@ MonoBehaviour:
   _addedScore: 215
   _pickUpSound:
     Guid:
-      Data1: -303530410
-      Data2: 1113985165
-      Data3: 911097262
-      Data4: -1600643997
-    Path: event:/SFX/Plyr/Plyr_VL_Pickup_Potion
+      Data1: 1705767721
+      Data2: 1109066713
+      Data3: -2099438933
+      Data4: 1250598129
+    Path: event:/SFX/Plyr/Plry_VL_Pickup_Spritze
 --- !u!50 &8516965849167047415
 Rigidbody2D:
   serializedVersion: 4

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{006355ad-571a-4e82-a9c6-00deb671f973}">
+		<property name="name">
+			<value>Voice_Line_Meter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ee3f6030-80c7-4a06-adff-a037a75fce8f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{44465a8f-58ea-46e0-b799-e3f4c7eb0a5a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{44465a8f-58ea-46e0-b799-e3f4c7eb0a5a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>4.8000001907348633</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>0.14000000059604645</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
