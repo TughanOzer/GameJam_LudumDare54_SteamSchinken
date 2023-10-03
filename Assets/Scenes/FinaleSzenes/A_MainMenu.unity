@@ -4136,7 +4136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tughan \xD6zel"
+  m_text: "Tughan \xD6zer"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8727816de83841e4cb5abe8768f39487, type: 2}
   m_sharedMaterial: {fileID: 5003160190465155694, guid: 8727816de83841e4cb5abe8768f39487, type: 2}
