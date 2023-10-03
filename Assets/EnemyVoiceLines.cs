@@ -12,7 +12,7 @@ public class EnemyVoiceLines : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _timeTillVoiceLine = UnityEngine.Random.Range(20, 40);
+        _timeTillVoiceLine = UnityEngine.Random.Range(10, 30);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class EnemyVoiceLines : MonoBehaviour
         if (_timeTillVoiceLine > 0)
             _timeTillVoiceLine -= Time.deltaTime;
         else
-            _timeTillVoiceLine = UnityEngine.Random.Range(20, 40);
+            _timeTillVoiceLine = UnityEngine.Random.Range(10, 30);
 
         if (_timeTillVoiceLine <= 0)
             AudioManager.Instance.PlayOneShot(_idleVoiceLines, Player.Instance.transform.position);

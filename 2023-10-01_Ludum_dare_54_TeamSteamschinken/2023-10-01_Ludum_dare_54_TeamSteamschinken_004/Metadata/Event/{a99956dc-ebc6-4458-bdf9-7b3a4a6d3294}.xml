@@ -72,9 +72,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{918c07aa-e8d2-482b-92d0-5c26ddc9ead2}">
-		<property name="volume">
-			<value>-14.5</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{8333b22e-998e-46cd-b1c6-e637d1603840}</destination>
 		</relationship>
@@ -120,22 +117,25 @@
 	<object class="MixerBusFader" id="{f7336a19-7d1e-4ce7-85c5-5fb768a6d9e6}" />
 	<object class="MultibandEqEffect" id="{a59f5ce1-4de2-4326-9d27-965b5b3fbb80}">
 		<property name="filterTypeA">
-			<value>4</value>
+			<value>6</value>
 		</property>
 		<property name="filterTypeB">
 			<value>1</value>
 		</property>
 		<property name="frequencyA">
-			<value>191.352493</value>
+			<value>21.2825985</value>
 		</property>
 		<property name="frequencyB">
 			<value>10011.3076</value>
 		</property>
 		<property name="qualityA">
-			<value>0.267448276</value>
+			<value>0.100000001</value>
 		</property>
 		<property name="qualityB">
 			<value>0.455827594</value>
+		</property>
+		<property name="gainA">
+			<value>-4.13793182</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{f0ac6fdb-9716-46f2-896d-3cad8a53eba1}">
