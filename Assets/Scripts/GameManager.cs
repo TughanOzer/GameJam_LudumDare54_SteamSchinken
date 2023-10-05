@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     #region Fields and Properties
 
     public static GameManager Instance { get; private set; }
-    public static event Action OnGameReset;
     public static event Action OnGameWon;
     public static event Action OnGameLost;
     public static event Action OnLevelWon;
@@ -33,22 +32,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        OnGameReset += ResetScore;
-    }
-
-    private void OnDisable()
-    {
-        OnGameReset -= ResetScore;    
-    }
-
     public void AddScore(int amount)
     {
         Score += amount;
     }
 
-    private void ResetScore()
+    public void ResetScore()
     { 
         Score = 0; 
     }

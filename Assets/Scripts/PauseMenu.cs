@@ -38,23 +38,27 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseControl.Instance.PauseGame();
                 _settingsCanvas.enabled = true;
+
+                _masterSlider.value = AudioManager.Instance.MasterVolume;
+                _musicSlider.value = AudioManager.Instance.MusicVolume;
+                _soundSlider.value = AudioManager.Instance.SoundVolume;
             }
         }
     }
 
     private void SetMasterVolume(float value)
     {
-        AudioManager.Instance.MasterVolume = value;
+        AudioManager.Instance.SetMasterVolume(value);
     }
 
     private void SetMusicVolume(float value)
     {
-        AudioManager.Instance.MusicVolume = value;
+        AudioManager.Instance.SetMusicVolume(value);
     }
 
     private void SetSoundVolume(float value)
     {
-        AudioManager.Instance.SoundVolume = value;
+        AudioManager.Instance.SetSoundVolume(value);
     }
 
     public void ResumeGameButton()

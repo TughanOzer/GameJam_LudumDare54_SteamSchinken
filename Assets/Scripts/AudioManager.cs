@@ -11,13 +11,12 @@ public class AudioManager : MonoBehaviour
     private EventInstance _menuMusicEventInstance;
     private EventInstance _levelMusicEventInstance;
 
-    [field: SerializeField] public EventReference _menuMusic { get; private set; }
-    [field: SerializeField] public EventReference _levelMusic { get; private set; }
+    [field: SerializeField] public EventReference MenuMusic { get; private set; }
+    [field: SerializeField] public EventReference LevelMusic { get; private set; }
 
-    [Header("Volume")]
-    [Range(0, 1)] public float MasterVolume = 1;
-    [Range(0, 1)] public float MusicVolume = 1;
-    [Range(0, 1)] public float SoundVolume = 1;
+    public float MasterVolume { get; private set; } = 1;
+    public float MusicVolume { get; private set; } = 0.4f;
+    public float SoundVolume { get; private set; } = 0.8f;
 
     private void Awake()
     {
@@ -54,7 +53,7 @@ public class AudioManager : MonoBehaviour
     {
         PLAYBACK_STATE playbackState;
         _menuMusicEventInstance.release();
-        _menuMusicEventInstance = CreateEventInstance(_menuMusic);
+        _menuMusicEventInstance = CreateEventInstance(MenuMusic);
         _menuMusicEventInstance.getPlaybackState(out playbackState);
         
         if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
@@ -65,7 +64,7 @@ public class AudioManager : MonoBehaviour
     {
         PLAYBACK_STATE playbackState;
         _levelMusicEventInstance.release();
-        _levelMusicEventInstance = CreateEventInstance(_levelMusic);
+        _levelMusicEventInstance = CreateEventInstance(LevelMusic);
         _levelMusicEventInstance.getPlaybackState(out playbackState);
 
         if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
@@ -80,5 +79,23 @@ public class AudioManager : MonoBehaviour
     public void StopLevelMusic()
     {
         _levelMusicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void SetMasterVolume(float volume)
+    {
+        if (volume >= 0 && volume <= 1)
+            MasterVolume = volume;
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        if (volume >= 0 && volume <= 1)
+            MusicVolume = volume;
+    }
+
+    public void SetSoundVolume(float volume)
+    {
+        if (volume >= 0 && volume <= 1)
+            SoundVolume = volume;
     }
 }

@@ -44,14 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135316996b88ed046ab4f92ee89fb500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <_menuMusic>k__BackingField:
+  <MenuMusic>k__BackingField:
     Guid:
       Data1: -778438465
       Data2: 1164640114
       Data3: 1324687015
       Data4: -1341957189
     Path: event:/Music/Menu_Music
-  <_levelMusic>k__BackingField:
+  <LevelMusic>k__BackingField:
     Guid:
       Data1: 1409699358
       Data2: 1080491668
